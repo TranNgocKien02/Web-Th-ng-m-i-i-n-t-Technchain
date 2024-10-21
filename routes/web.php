@@ -68,6 +68,7 @@ Route::middleware('auth')->prefix('donhangs')
     Route::put('{id}/update',   [OrderController::class, 'update'])->name('update');
 });
 
+
 // route Admin
 Route::middleware(['auth', 'auth.admin'])->prefix('admins')
     ->as('admins.')
@@ -107,6 +108,8 @@ Route::middleware(['auth', 'auth.admin'])->prefix('admins')
             Route::delete('{id}/destroy', [DonHangController::class, 'destroy'])->name('destroy');
     });
     });
+
+    
 Route::prefix('clients')
     ->as('clients.')
     ->group(function () {
